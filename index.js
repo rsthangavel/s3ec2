@@ -17,7 +17,11 @@ AWS.config.credentials = new AWS.EC2MetadataCredentials({
 AWS.config.region = 'us-east-1';
 AWS.config.getCredentials(function (err) {
     if (err) console.log('aws credentials error', err.stack); // credentials not loaded
-    else console.log('AWS Credentials Loaded');
+    
+    else {
+        console.log(AWS.config.credentials);
+        console.log('AWS Credentials Loaded');
+    }
 });
 
 
