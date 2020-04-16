@@ -1,8 +1,8 @@
 const AWS = require('aws-sdk');
 const bucket =  'private-uploadtestregion-1';
-const secretAccessKey =  '4Y1nt9kf425/J7aShOiBQs9eyFMO9oJ2';
-const accessKeyId =  'AKIAINDR4DHGLVRS';
-
+const secretAccessKey =  process.env.S3_ACCESSKEY;
+const accessKeyId =  process.env.S3_ACCESSKEYID;
+console.log(process.env.PORT);
 AWS.config.credentials = {
     accessKeyId: accessKeyId,
     secretAccessKey: secretAccessKey
