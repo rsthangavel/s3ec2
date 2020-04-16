@@ -2,10 +2,13 @@ const AWS = require('aws-sdk');
 const bucket = 'private-uploadtestregion-1';
 const secretAccessKey = process.env.S3_ACCESSKEY;
 const accessKeyId = process.env.S3_ACCESSKEYID;
+
+
 // AWS.config.credentials = {
 //     accessKeyId: accessKeyId,
 //     secretAccessKey: secretAccessKey
 //   };
+AWS.config.credentials = {};
 AWS.config.credentials = new AWS.EC2MetadataCredentials({
     httpOptions: { timeout: 5000 }, // 5 second timeout
     maxRetries: 10, // retry 10 times
